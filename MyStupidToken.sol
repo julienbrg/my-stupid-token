@@ -1,12 +1,11 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 
-contract MyStupidToken is ERC20, ERC20Detailed
+contract MyStupidToken is ERC20
 {
     constructor()
-	public ERC20Detailed("My Stupid Token", "MST", 18)
+	public ERC20("My Stupid Token", "MST")
 	{
 		_mint(msg.sender, 10000*10**18);
 	}
